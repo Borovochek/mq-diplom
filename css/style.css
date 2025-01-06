@@ -7,11 +7,12 @@
 
 
 
+
 /* HEADER */
 
 .header {
     background-color: #666666;
-    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg);
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/refs/heads/main/images/banner-bg.jpg);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -40,13 +41,13 @@
 .header::after {
     content: '';
     position: absolute;
-    background-color: #000000;
+    background-color: #0f0d0e;
     right: 0;
     left: 0;
     top: 0;
     bottom: 0;
 
-    opacity: 0.45;
+    opacity: 0.60;
     z-index: -1;
 }
 
@@ -54,7 +55,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1200px;
+    max-width: 1200px;
     padding: 0 15px 0 15px;
     margin-left: auto;
     margin-right: auto;
@@ -105,21 +106,244 @@
 
 /* END HEADER */
 
+/* POPUP */
+.popup-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.popup {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.popup__container {
+    width: 391px;
+    padding: 50px 30px 45px 30px;
+    background-color: #ffffff;
+    position: relative;
+
+}
+
+.popup-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: open-sans-b, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #0f0d0e;
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 40px;
+}
+
+.popup-header::after {
+    content: "";
+    width: 66px;
+    height: 3px;
+    background-color: #e1d9bd;
+    margin-top: 14px;
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.select-text {
+    font-family: open-sans-r, Arial, sans-serif;
+    color: #000000;
+    font-size: 13px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.select {
+    width: 100%;
+    height: 45px;
+
+    padding-left: 19px;
+    padding-right: 14px;
+
+    margin: 0;
+
+    border: none;
+    outline: none;
+    background-color: #f4f7f6;
+
+    font-size: 13px;
+    font-family: open-sans-r, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.54);
+
+    appearance: none;
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/ea11befd58021691f6e266563e4b530ab6467315/svg/form-arrows.svg);
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+.select:focus {
+    border-bottom: 1px solid #ebe7d7;
+}
+
+.radio-wrp {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.radio-group {
+    margin-right: 34px;
+}
+
+.radio {
+    display: none;
+}
+
+.radio-group__text {
+    font-family: open-sans-r, Arial, sans-serif;
+    color: #000000;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.radio-group__text::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+
+    width: 18px;
+    height: 18px;
+
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/ea11befd58021691f6e266563e4b530ab6467315/svg/form-empty-circle.svg);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: center center;
+}
+
+.radio:checked~.radio-group__text::before {
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/ea11befd58021691f6e266563e4b530ab6467315/svg/form-circle.svg);
+}
+
+.field-group {
+    margin-bottom: 24px;
+}
+
+.field-textarea {
+    width: 100%;
+    min-height: 129px;
+    padding: 20px;
+    background-color: #f4f7f6;
+    border: none;
+    outline: none;
+}
+
+.field-textarea:focus {
+    border: 2px solid #cabc8f;
+}
+
+.field-text {
+    font-family: open-sans-r, Arial, sans-serif;
+    color: #000000;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.field-textarea::placeholder {
+    font-family: open-sans-r, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.form-button {
+    width: 100%;
+    height: 47px;
+    border: none;
+    outline: none;
+    background-color: #b59f5b;
+    margin-bottom: 54px;
+
+    font-family: open-sans-b, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.form-button:hover {
+    background-color: #323232;
+}
+
+.popup-close {
+    position: absolute;
+    /* clip: rect(1px 1px 1px 1px); */
+    height: 30px;
+    width: 30px;
+    font-size: 0;
+    top: -30px;
+    right: 0;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.popup-close::before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/ea11befd58021691f6e266563e4b530ab6467315/svg/form-x.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 17px;
+    border: none;
+}
+
+/* END POPUP */
+
 /* ASIDE-TRENDS */
+
 .aside-trends {
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    width: 100%;
     margin-top: 63px;
     margin-bottom: 64px;
     margin-left: auto;
     margin-right: auto;
-    }
+}
 
 .trends__header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin-bottom: 44px;
 }
@@ -135,7 +359,6 @@
     font-family: open-sans-b, Arial, sans-serif;
     text-transform: uppercase;
     color: #0f0d0e;
-    text-align: center;
     font-size: 20px;
     text-decoration: none;
     margin-bottom: 14px;
@@ -143,24 +366,83 @@
 
 .trend__wrp {
     display: flex;
+    width: 100%;
+    gap: 4px;
 }
 
 .trend-article {
     display: flex;
+    align-items: end;
+    width: calc(25% - (12px / 4));
+    min-height: 320px;
+    padding: 20px 20px 15px 20px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-color: #eff6f1;
+    position: relative;
+    z-index: 0;
+}
+
+.trend-article__wrp {
+    display: flex;
     flex-direction: column;
+    border: 3px solid rgba(204, 194, 151, 0.6);
+    padding: 38px 39px 36px 33px;
 }
 
 .trend-garden {
-    background-image: ;
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/refs/heads/main/images/trend1.jpg);
 }
 
+.trend-article::after {
+    content: '';
+    position: absolute;
+    background-color: #0f0d0e;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.60;
+    z-index: -1;
+}
+
+.trend-cheese {
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/refs/heads/main/images/trend2.jpg);
+}
+
+.trend-mountains {
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/refs/heads/main/images/trend3.jpg);
+}
+
+.trend-lemons {
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/refs/heads/main/images/trend4.jpg);
+}
+
+.trend-header__link {
+    font-family: open-sans-b, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: start;
+    font-size: 20px;
+    line-height: 1.2;
+    text-decoration: none
+}
+
+.trend-header__link:hover {
+    color: #b59f5b;
+}
+
+
 /* END ASIDE-TRENDS */
+
 /* MAIN */
 
 .page {
     display: flex;
     justify-content: center;
-    width: 1200px;
+    max-width: 1200px;
     padding: 0 15px 0 15px;
     margin-left: auto;
     margin-right: auto;
@@ -168,7 +450,7 @@
 }
 
 .main-posts {
-    width: 776px;
+    width: 100%;
     margin-right: 120px;
 }
 
@@ -176,11 +458,10 @@
     width: 272px;
 }
 
-
 .main-article {
     display: flex;
     justify-content: space-between;
-    width: 776px;
+    width: 100%;
     margin-bottom: 60px;
 }
 
@@ -207,7 +488,7 @@
     text-transform: uppercase;
     color: #b8a362;
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     text-decoration: none;
 }
 
@@ -277,14 +558,13 @@
     flex-direction: column;
 }
 
-
 .side-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 28px;
-  }
+}
 
 .side-header::after {
     content: "";
@@ -389,7 +669,7 @@
 .search-button {
     width: 48px;
     height: 48px;
-    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/ea11befd58021691f6e266563e4b530ab6467315/svg/search.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-color: #b59f5b;
@@ -522,12 +802,145 @@
 
 /* TOPICS-END*/
 
-/* SIDE-BAR */
+/* SIDE-BAR END */
+
+/* TRANDS-ASIDE */
+
+.aside-prodacts {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prodacts__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 44px;
+}
+
+.prodacts__header::after {
+    content: "";
+    width: 66px;
+    height: 3px;
+    background-color: #e1d9bd;
+}
+
+.prodacts-header__link {
+    font-family: open-sans-b, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #0f0d0e;
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 14px;
+}
+
+.prodacts__wrp {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 43px;
+    padding: 0 20px;
+}
+
+.prodacts-article {
+    display: flex;
+    flex-direction: column;
+    width: calc(33% - (128px / 3));
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+.prodacts-article__wrp {
+    flex-grow: 1;
+    outline: 3px solid rgba(211, 197, 157, 0.6);
+    margin: -35px -20px 0;
+    padding: 28px 20px;
+}
+
+.prodact-content__wrp {
+    margin-top: 20px;
+}
+
+.prodact-header__link {
+    font-family: open-sans-b, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #0f0d0e;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.prodact-text {
+    font-family: open-sans-r, Arial, sans-serif;
+    color: #0f0d0e;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.prodact-text__link {
+    color: #baa667;
+    text-decoration: none;
+}
+
+.prodact-text__link:hover {
+    text-decoration: underline;
+}
+
+.prodact-price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 26px;
+    margin-bottom: 26px;
+}
+
+.prodact-price__wrp {
+    display: flex;
+    flex-direction: column;
+}
+
+.prodact-price__old {
+    font-family: open-sans-b, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #0f0d0e;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.prodact-price__current {
+    font-family: open-sans-b, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #0f0d0e;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.shop-button {
+    width: 139px;
+    height: 47px;
+    font-family: open-sans-b, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+
+    background-color: #b59f5b;
+    border: none;
+}
+
+.shop-button:hover {
+    background-color: #323232;
+}
+
+/* TRANDS-ASIDE END */
 
 /* FOOTER */
 
 .footer {
-    width: 1200px;
+    max-width: 1200px;
     padding: 0 15px 0 15px;
     margin-left: auto;
     margin-right: auto;
@@ -535,15 +948,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
-
 
 .socials-list {
     display: flex;
     justify-content: center;
     padding: 30px 0;
-
     margin-bottom: 73px;
     background-color: #f4f7f6;
 }
@@ -559,28 +969,28 @@
 }
 
 .dribbble {
-    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg);
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/ea11befd58021691f6e266563e4b530ab6467315/svg/001-dribbble.svg);
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: center;
 }
 
 .pinterest {
-    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg);
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/ea11befd58021691f6e266563e4b530ab6467315/svg/001-pinterest.svg);
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: center;
 }
 
 .tumblr {
-    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg);
+    background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/ea11befd58021691f6e266563e4b530ab6467315/svg/003-tumblr.svg);
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: center;
 }
 
 .copyright {
- text-align: center;
+    text-align: center;
 }
 
 .copyright-link {
@@ -588,4 +998,73 @@
     text-decoration: none;
     font-size: 12px;
     color: #a0a0a0;
+}
+
+@media (min-width: 640px) and (max-width: 1200px) {
+
+    .header-container {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .page {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .trend__wrp {
+        flex-wrap: wrap;
+    }
+
+    .trend-article {
+        width: calc((100% - 4px) / 2);
+        min-height: 248px;
+    }
+
+    .main-article {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 22px;
+        margin-bottom: 42px;
+    }
+
+    .main-posts {
+        margin-right: 30px;
+    }
+
+    .article-img {
+        margin-right: 0;
+    }
+
+    .prodacts__wrp {
+        flex-wrap: wrap;
+        /* justify-content: space-between;
+        width: 100%;
+        gap: 43px;
+        padding: 0 20px; */
+    }
+
+    .prodacts-article {
+        /* display: flex;
+        flex-direction: column; */
+        width: calc((100% - 72px) / 2);
+        /* padding-left: 22px;
+        padding-right: 22px; */
+    }
+
+    .prodact-img {
+        width: 100%;
+    }
+
+    .aside-prodacts {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .footer {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
 }
