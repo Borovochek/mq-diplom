@@ -186,21 +186,17 @@
     margin-top: 14px;
 }
 
-.form {
-    width: 100%;
-    height: 100%;
-}
-
 .form-group {
-    display: grid;
+    display: block;
 }
 
 .select-group {
-    display: grid;
+    display: block;
     margin-bottom: 20px;
 }
 
 .select-text {
+    display: block;
     font-family: open-sans-r, Arial, sans-serif;
     color: #000000;
     font-size: 13px;
@@ -917,25 +913,25 @@
     text-decoration: none;
 }
 
-.shop-button {
+.shop-button__link {
+    display: inline-block;
     width: 139px;
     height: 47px;
     background-color: #b59f5b;
     border: none;
-}
+    padding: 12px;
 
-.shop-button__link {
     font-family: open-sans-b, Arial, sans-serif;
     text-transform: uppercase;
     font-size: 14px;
     text-align: center;
     color: #ffffff;
     text-decoration: none;
-    display: block;
+
     transform: translateY(60%);
 }
 
-.shop-button:hover {
+.shop-button__link:hover {
     background-color: #323232;
 }
 
@@ -1110,7 +1106,13 @@
     }
 }
 
-@media (max-width: 639px) {
+@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
+    .trend-article {
+        width: calc(25% - (12px / 4));
+    }
+}
+
+@media (max-width: 640px) {
 
     .header {
         background-image: url(https://raw.githubusercontent.com/Borovochek/mq-diplom/refs/heads/main/images/banner-mobile.jpg);
@@ -1240,5 +1242,11 @@
     .footer {
         margin-left: 15px;
         margin-right: 15px;
+    }
+}
+
+@media (max-width: 640px) and (orientation: landscape) {
+    .trend-article {
+        width: calc((100% - 4px) / 2);
     }
 }
